@@ -1,0 +1,38 @@
+#%RAML 1.0
+title: clicnic Service
+version: v1
+baseUri: /clinics
+types:
+  results:
+      properties:
+          postcode:string
+          count:number
+      example:
+          postcode:"N9"
+          count: 4 
+   City:
+      type:results
+   Clinic:
+      properties:
+        organisation_id: string
+        name:string      
+      example: 
+        organisation_id: "1349859",
+        name: "Marie Stopes UK Croydon Clinic",  
+    Clinics:
+      type: Clinic []
+resourceTypes:
+  GET:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: <<item>>
+/:
+  /postcode:
+    /{postcode}
+    type:  { GET: {item : Clinics } }
+  /city:
+    /{name}:
+    type:  { GET: {item : City } }

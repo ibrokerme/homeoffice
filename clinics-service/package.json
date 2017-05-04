@@ -1,0 +1,41 @@
+{
+  "name": "clinics-service",
+  "version": "1.0.0",
+  "description": "A clinic service, microservice using  nodejs",
+  "author": "Anthony Borisade",
+  "license": "ISC",
+  "main": "index.js",
+  "standard": {
+    "env": [
+      "mocha"
+    ],
+    "ignore": [
+      "mock"
+    ]
+  },
+  "scripts": {
+    "test": "mocha -R spec src/**/*.spec.js",
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "express",
+    "microservice"
+  ],
+  "devDependencies": {
+    "eslint": "^3.13.1",
+    "mocha": "^3.2.0",
+    "should": "^11.1.2",
+    "snazzy": "^6.0.0",
+    "standard": "^8.6.0",
+    "supertest": "^2.0.1"
+  },
+  "dependencies": {
+    "cluster": "^0.7.7",
+    "express": "^4.14.0",
+    "helmet": "^3.4.0",
+    "http-status": "^0.2.5",
+    "morgan": "^1.7.0",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.0"
+  }
+}
